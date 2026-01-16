@@ -1,9 +1,13 @@
 
 const arraybuffer = new ArrayBuffer(4) // 4 bytes
 
+
+const arraybuffer2 = new ArrayBuffer(4, { maxByteLength: 8 })//setting max byte to 8 which mean we can resize byte sizse in array buffer
+arraybuffer.resize(3)//resizing array buffer to 3 bytes
+
 const view = new DataView(arraybuffer) // use to acess data in arraybuffer
 
-view.setInt8(0,128) //setting data to buffer at 0 index with 128 data
+view.setInt8(0, 128) //setting data to buffer at 0 index with 128 data
 
 console.log(view.getUint8(0)) // use to get element on index 0 in array buffer  'getUint8()' use for unsign mean only positive number can show or get from 1 to 255
 
